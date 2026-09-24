@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyo
+scans/*.json
+scans/*.md
+raw-reports/*/
+assets/*.csv
+"Daily Picture"/*.html
+"Daily Picture"/*.png
+"Daily Picture"/*.draft.md
