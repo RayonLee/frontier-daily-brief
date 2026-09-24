@@ -5,6 +5,8 @@
 智库 + 科技前沿每日扫描，自动生成报纸版式日报图片的自动化流程。
 Daily scanning of think tanks & tech frontier sources, generating newspaper-style daily briefing images.
 
+![日报成品示例（2026-09-24 期）/ Sample output (Sep 24, 2026 issue)](docs/daily-news-demo.png)
+
 ---
 
 ## 中文
@@ -22,6 +24,12 @@ Daily scanning of think tanks & tech frontier sources, generating newspaper-styl
 - **双流水线分层筛选**：智库线与科技线独立运行，Track A/B 按内容深度分级；一条线跑通后整体迁移复制第二条线，不重复造轮子。
 - **流式编排，省 token**：从「一次加载全部原文」改为「读一篇、处理一篇、登记一篇」，深查阶段只取元数据，把上下文成本压到最低。
 - **可核验交付**：信息登记 log 逐条附原始链接，供人工核验溯源；针对国外源站的跨洋时滞，发布日期按搜集日期 +1 天对齐。
+
+### 核心优势：官网一手信源，全程可溯源
+
+- **只抓一手，不采二手**：所有内容直接抓取自机构与公司的**官方网站**（研究出版页、官方博客、新闻稿），不依赖媒体转载、内容聚合平台或社交媒体上的二手痕迹与杂糅信息——日报里读到的每一条，都对应发布方官网的原文。
+- **条条件可溯源**：每篇收录在登记 CSV 中附官网原始链接，任何结论可一键回查原文，满足科研引用与智库写作的核验要求。
+- **质量上限取决于你的 List**：日报的信息丰富度由监控列表决定——`config/*.json` 里填的源越全、越准，日报越有价值；流水线本身不设信息天花板。
 
 ### 日常使用：一句话 Prompt
 
@@ -91,6 +99,12 @@ This skill was presented as a core hands-on case at the workshop **"From Ideas t
 - **Two pipelines with tiered filtering**: the think-tank and tech pipelines run independently, with Track A/B graded by content depth; once one pipeline works, it is cloned and adapted into the second — no reinventing the wheel.
 - **Streaming orchestration for token efficiency**: instead of loading all raw articles at once, articles are read, processed, and registered one by one; the deep-check stage records metadata only.
 - **Verifiable deliverables**: every registry entry carries its original URL for human verification; to handle the trans-Pacific time lag of overseas sources, the publication date is aligned to scan date + 1 day.
+
+### Core Strength: First-Hand Sources, Fully Traceable
+
+- **First-hand only, never second-hand**: all content is scraped directly from the **official websites** of institutions and companies (research publication pages, official blogs, press releases) — never from media reprints, content aggregators, or social-media traces. Every item in the briefing corresponds to the publisher's original page.
+- **Every entry traceable**: each registered item carries its official URL in the CSV registry, so any claim can be checked against the original source with one click — meeting the verification bar for academic research and think-tank writing.
+- **Quality is bounded by your watch list**: the richness of the briefing depends on how comprehensive and well-chosen your `config/*.json` watch lists are; the pipeline itself imposes no ceiling on information quality.
 
 ### Daily Use: One Prompt
 
