@@ -23,6 +23,24 @@ Daily scanning of think tanks & tech frontier sources, generating newspaper-styl
 - **流式编排，省 token**：从「一次加载全部原文」改为「读一篇、处理一篇、登记一篇」，深查阶段只取元数据，把上下文成本压到最低。
 - **可核验交付**：信息登记 log 逐条附原始链接，供人工核验溯源；针对国外源站的跨洋时滞，发布日期按搜集日期 +1 天对齐。
 
+### 日常使用：一句话 Prompt
+
+在 Coding Agent（Kimi Code / Claude Code 等）中打开本文件夹，输入：
+
+> 进行 YYYY 年 MM 月 DD 日的智库和科技搜索
+
+Agent 会按 [SKILL.md](SKILL.md) 自动执行完整流水线：浅扫 → 深查 → 保存原文 → 登记 → 整合成稿 → 出图。无需记忆任何命令；需要精细控制时，也可按 SKILL.md 手动逐步运行脚本。
+
+### 交付物
+
+| 层级 | 交付物 | 位置 | 说明 |
+|---|---|---|---|
+| **最终** | 日报图片 PNG | `tech-learning-scan/Daily Picture/daily-news-<发布日期>.png` | 报纸版式成稿，可读性强，可直接分享 |
+| 中间 | 日报笔记 markdown | `*/scans/daily-scan-<date>.md`、`daily-learn-<date>.md` | 按 5W1H 框架分析的当日结构化笔记 |
+| 中间 | 抓取原文 txt | `*/raw-reports/<date>/` | 每篇文章全文存档，供回读核查 |
+| 中间 | 信息登记 CSV | `*/assets/*.csv` | 逐条附原始链接，供人工核验溯源 |
+| 中间 | 深查元数据 JSON | `*/scans/deep_check_report_<date>.json` | 候选文章的日期、字数、PDF 链接等元数据 |
+
 ### 功能特性
 
 - **两条独立流水线**
@@ -73,6 +91,24 @@ This skill was presented as a core hands-on case at the workshop **"From Ideas t
 - **Two pipelines with tiered filtering**: the think-tank and tech pipelines run independently, with Track A/B graded by content depth; once one pipeline works, it is cloned and adapted into the second — no reinventing the wheel.
 - **Streaming orchestration for token efficiency**: instead of loading all raw articles at once, articles are read, processed, and registered one by one; the deep-check stage records metadata only.
 - **Verifiable deliverables**: every registry entry carries its original URL for human verification; to handle the trans-Pacific time lag of overseas sources, the publication date is aligned to scan date + 1 day.
+
+### Daily Use: One Prompt
+
+Open this folder in a Coding Agent (Kimi Code, Claude Code, etc.) and type:
+
+> Run the think-tank and tech scan for YYYY-MM-DD（进行某月某日的智库和科技搜索）
+
+The agent then follows [SKILL.md](SKILL.md) to execute the full pipeline: shallow scan → deep check → save raw text → register → compose the draft → render the image. No commands to memorize; for fine-grained control, you can still run the scripts step by step as documented in SKILL.md.
+
+### Deliverables
+
+| Level | Deliverable | Location | Notes |
+|---|---|---|---|
+| **Final** | Daily briefing PNG | `tech-learning-scan/Daily Picture/daily-news-<publish-date>.png` | Newspaper-style page, highly readable, ready to share |
+| Intermediate | Daily notes markdown | `*/scans/daily-scan-<date>.md`, `daily-learn-<date>.md` | Structured notes analyzed with the 5W1H framework |
+| Intermediate | Raw article text | `*/raw-reports/<date>/` | Full-text archive of every article for re-reading |
+| Intermediate | Registry CSVs | `*/assets/*.csv` | One row per item with original URLs for human verification |
+| Intermediate | Deep-check metadata JSON | `*/scans/deep_check_report_<date>.json` | Candidate metadata: date, word count, PDF link, etc. |
 
 ### Features
 

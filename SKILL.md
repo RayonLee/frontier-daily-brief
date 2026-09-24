@@ -44,6 +44,14 @@ playwright install chromium
 
 额外依赖（可选）：`python-docx`、`pdfplumber`（仅在你想扩展 PDF 分析时）。
 
+## 日常使用（推荐）
+
+在 Coding Agent 中打开本仓库文件夹，直接输入一句话：
+
+> 进行 YYYY 年 MM 月 DD 日的智库和科技搜索
+
+Agent 会按本文件依次完成全部步骤并产出日报图片。下面的分步命令用于调试与精细控制。
+
 ## 第一步：填写监控列表
 
 打开 `config/think_tank_list.json` 和 `config/tech_company_list.json`，按 `config/list-format.md` 的格式填入你要监控的机构与列表页 URL。
