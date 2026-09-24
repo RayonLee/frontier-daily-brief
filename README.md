@@ -158,3 +158,11 @@ playwright install chromium
 See [SKILL.md](SKILL.md) for Track A/B definitions, known limitations, and extension ideas.
 
 > Note: the generated newspaper is in Chinese; the pipelines themselves work with any English-language source pages.
+
+---
+
+## License / 许可证
+
+Released under the [MIT License](LICENSE). 本项目以 MIT 许可证开源，可自由使用、修改与再分发，保留版权声明即可。
+
+Copyright (c) 2026 Ruiyang Li (PhD Student, Renmin University of China)
