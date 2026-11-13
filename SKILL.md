@@ -146,3 +146,9 @@ python scripts/generate_daily_picture.py <搜集日期>
 - 将 `config/*.json` 接入你自己的数据库或 CMS，实现动态增删监控源。
 - 把 `draft-template.md` 的填写步骤交给 LLM，进一步减少人工。
 - 对高频失败站点增加 domain-specific 正文选择器。
+
+## 季度综合研究
+
+当用户提出“季度 AI 梳理”“季度智库研究报告”或“按季度总结 AI 发展主线”时，进入 [`quarterly-ai-review/SKILL.md`](quarterly-ai-review/SKILL.md)，不要套用日报的 Track A/B 输出结构。
+
+季度子技能覆盖：筛选去重与证据登记、跨报告机理综合、独立判断、首次引用顺序编号、公开链接补全、Word/PDF 字体与加粗、逐页验收和敏感信息检查。默认产出长篇研究及证据索引，而不是日报图片。所有数量与结论均从当季度材料重新计算，不继承历史季度数值。
